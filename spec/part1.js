@@ -58,7 +58,7 @@
       });
 
       it('should accept an index argument', function() {
-        expect(_.last([1, 2, 3], 2)).to.eql(3);
+        expect(_.last([1, 2, 3], 2)).to.eql([2, 3]);
       });
 
       it('should return empty array if zero is passed in as the index', function() {
@@ -251,7 +251,7 @@
 
       it('should return all odd numbers in an array', function() {
         var isOdd = function(num) { return num % 2 !== 0; };
-        var odds = [1, 2, 3, 4, 5];
+        var odds = _.filter([1, 2, 3, 4, 5], isOdd);
 
         expect(odds).to.eql([1, 3, 5]);
       });
